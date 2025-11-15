@@ -9,12 +9,15 @@ To Write a program and define a class Car with brand (String), color (String), a
 ## ALGORITHM :
 1.	Start the program.
 2.	Import the necessary package 'java.util'
-3.	
+3.	Define class Car with attributes: brand, color, year.
+4.	Add method printDetails() to display these attributes.
+5.	In main(), create a Scanner object.
+6.	Create two Car objects.
+7.	Read brand, color, and year for both objects and assign values.
+8.	Call printDetails() for both objects to print their details.
+9.	End of the program.
 
-
-
-
-
+   
 ## PROGRAM:
  ```
 /*
@@ -65,12 +68,7 @@ class prog {
 ```
 
 ## OUTPUT:
-## Test Result Table
-
-
-
+<img width="683" height="710" alt="image" src="https://github.com/user-attachments/assets/eb2c18b3-a618-4474-89bb-cbb02cd120ea" />
 
 ## RESULT:
-
-
-
+Thus, the program creates a Car class with attributes and a printDetails method, reads input for two Car objects, assigns their values, prints their details, and ends.
