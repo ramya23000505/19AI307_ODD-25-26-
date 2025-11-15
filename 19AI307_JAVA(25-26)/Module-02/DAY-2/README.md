@@ -43,6 +43,7 @@ class prog
         int n = sc.nextInt();
         System.out.println(isEven(n));
     }
+}
 ```
 
 ## OUTPUT:
@@ -52,3 +53,4 @@ class prog
 
 ## RESULT:
 Thus, the result is that the number is identified as even when (num & 1) == 0, otherwise it is odd.
+
