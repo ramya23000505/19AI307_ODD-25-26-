@@ -1,10 +1,10 @@
 # Ex.No:2(A) CLASS AND OBJECT
 
 ## QUESTION:
-
+Define a class Car with brand (String), color (String), and year (int). Create 2 different objects of Car  Assign values to attributes. Print the details of both cars.
 
 ## AIM:
-
+To Write a program and define a class Car with brand (String), color (String), and year (int). Create 2 different objects of Car  Assign values to attributes. Print the details of both cars.
 
 ## ALGORITHM :
 1.	Start the program.
@@ -19,8 +19,8 @@
  ```
 /*
 Program to implement a Class and Objects using Java
-Developed by: 
-RegisterNumber:  
+Developed by: RAMYA R
+RegisterNumber:  212223230169
 */
 ```
 
@@ -65,7 +65,15 @@ class prog {
 ```
 
 ## OUTPUT:
+## Test Result Table
+
+| Input                    | Expected                                         | Got                                              |
+|--------------------------|---------------------------------------------------|---------------------------------------------------|
+| Toyota<br>Red<br>2015<br>Honda<br>Blue<br>2018 | Brand: Toyota<br>Color: Red<br>Year: 2015<br>Brand: Honda<br>Color: Blue<br>Year: 2018 | Brand: Toyota<br>Color: Red<br>Year: 2015<br>Brand: Honda<br>Color: Blue<br>Year: 2018 |
+| Ford<br>Black<br>2020<br>BMW<br>White<br>2017 | Brand: Ford<br>Color: Black<br>Year: 2020<br>Brand: BMW<br>Color: White<br>Year: 2017 | Brand: Ford<br>Color: Black<br>Year: 2020<br>Brand: BMW<br>Color: White<br>Year: 2017 |
+| Tesla<br>White<br>2022<br>Audi<br>Grey<br>2019 | Brand: Tesla<br>Color: White<br>Year: 2022<br>Brand: Audi<br>Color: Grey<br>Year: 2019 | Brand: Tesla<br>Color: White<br>Year: 2022<br>Brand: Audi<br>Color: Grey<br>Year: 2019 |
 
 
 ## RESULT:
+
 
