@@ -22,8 +22,8 @@ To write a Java program to create a class with a method using Polymorphism.
 
 ```
 Program to implement a Polymorphism using Java
-Developed by: Sathyaa R
-RegisterNumber: 212223100052
+Developed by: Ramya R
+RegisterNumber: 212223230169
 ```
 
 ## SOURCE CODE:
@@ -98,4 +98,5 @@ public class Main
 
 ## RESULT:
 Thus, the program to write a Java program to create a class with a method using Polymorphism is written and executed successfully.
+
 
