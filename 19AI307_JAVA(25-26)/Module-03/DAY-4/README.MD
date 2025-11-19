@@ -2,7 +2,6 @@
 
 ## QUESTION:
 Each judge uses different criteria to score fighters. Based on points, the judge will declare “WIN”, “LOSE” or “DRAW”.
-
 LenientJudge: WIN if diff ≥ 5, DRAW if < 5
 StrictJudge: WIN if diff ≥ 10, DRAW if < 10
 ## AIM:
@@ -80,5 +79,6 @@ public class prog
 
 ## RESULT:
 Thus, the program that evaluates two fighters’ scores using selected judging criteria to decide whether the result is WIN, LOSE, or DRAW is written and execited successfully.
+
 
 
