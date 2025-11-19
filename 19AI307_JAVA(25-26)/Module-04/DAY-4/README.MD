@@ -1,27 +1,28 @@
-# Ex.No:4(D) DESIGN PATTERN  ---- BEHAVIOUR PATTERN
+# Ex.No:4(D) DESIGN PATTERN -- ABSTRACT FACTORY
 
 ## QUESTION:
-Write a DAO class for a Contact model with fields like name and phone. Implement a method to return all contacts starting with a specific letter.
+Create a program that loads an operating system shell using the Factory Pattern. Based on user input, return a shell object: windows, linux, mac.
 
 ## AIM:
-To write a Java program that provides a DAO for managing contacts and retrieving all contacts whose names start with a specified letter.
+To write a java program that implements a Factory returning a Windows, Linux, or Mac shell object based on user input.
 
 
 ## ALGORITHM :
 1.	Start the program.
 2.	Import the necessary package 'java.util'
-3.	Read the number of contacts and create a ContactDAO object.
-4.	For each contact, read its name and phone number, then add it to the DAO using addContact().
-5.	Read the input letter used for filtering.
-6.	Call getContactsStartingWith(letter) to retrieve all contacts whose names start with the given letter.
-7.	Traverse the returned list and print the name and phone of each matching contact.
-8.	End the program.
+3.	Read the operating system name from the user inside a loop.
+4.	Pass the input to the ShellFactory to request the appropriate shell object.
+5.	Inside the factory, check the OS name and return the matching shell implementation.
+6.	If a valid shell is returned, call its loadShell() method.
+7.	If no matching object exists, print an error message for invalid OS input.
+8.	Repeat until the user types "exit".
+9.	End the program.
 
 
 ## PROGRAM:
 
 ```
-Program to implement a Behaviour Pattern using Java
+Program to implement a Abstract Factory Pattern using Java
 Developed by: Ramya R
 RegisterNumber: 212223230169
 ```
@@ -29,79 +30,52 @@ RegisterNumber: 212223230169
 ## SOURCE CODE:
 
 ```
-import java.util.*;
+import java.util.Scanner;
 
-class Contact 
-{
-    private String name;
-    private String phone;
+interface Shell {
+    void loadShell();
+}
 
-    public Contact(String name, String phone) 
-    {
-        this.name = name;
-        this.phone = phone;
-    }
-    public String getName() 
-    {
-        return name;
-    }
-    public String getPhone() 
-    {
-        return phone;
+class WindowsShell implements Shell {
+    public void loadShell() {
+        System.out.println("Loading Windows Shell");
     }
 }
 
-interface ContactDAO 
-{
-    void addContact(Contact contact);
-    List<Contact> getContactsStartingWith(char letter);
+class LinuxShell implements Shell {
+    public void loadShell() {
+        System.out.println("Loading Linux Shell");
+    }
 }
 
-class ContactDAOImpl implements ContactDAO 
-{
-    private List<Contact> contactList = new ArrayList<>();
-
-    public void addContact(Contact contact) 
-    {
-        contactList.add(contact);
+class MacShell implements Shell {
+    public void loadShell() {
+        System.out.println("Loading Mac Shell");
     }
-    public List<Contact> getContactsStartingWith(char letter) 
-    {
-        List<Contact> result = new ArrayList<>();
-        for (Contact c : contactList) 
-        {
-            if (Character.toLowerCase(c.getName().charAt(0)) == Character.toLowerCase(letter)) {
-                result.add(c);
-            }
+}
+
+class ShellFactory {
+    public Shell getShell(String os) {
+        if (os.equalsIgnoreCase("linux")) {
+            return new LinuxShell();
+        } else if (os.equalsIgnoreCase("mac")) {
+            return new MacShell();
         }
-        return result;
+        return null;
     }
 }
 
-public class ContactManager 
-{
-    public static void main(String[] args) 
-    {
+public class Main {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        ContactDAO dao = new ContactDAOImpl();
-        int n = sc.nextInt();
-        sc.nextLine(); 
-
-        for (int i = 0; i < n; i++) 
-        {
-            String name = sc.nextLine();
-            String phone = sc.nextLine();
-            dao.addContact(new Contact(name, phone));
+        ShellFactory factory = new ShellFactory();
+        while (true) {
+            String input = sc.nextLine();
+            if (input.equalsIgnoreCase("exit")) break;
+            Shell shell = factory.getShell(input);
+            if (shell != null) shell.loadShell();
+            else System.out.println("Invalid OS: " + input);
         }
-        char letter = sc.next().charAt(0);
-        List<Contact> filteredContacts = dao.getContactsStartingWith(letter);
-        
-        for (Contact c : filteredContacts) 
-        {
-            System.out.println(c.getName());
-            System.out.println(c.getPhone());
-        }
-        sc.close();
     }
 }
 ```
@@ -109,9 +83,9 @@ public class ContactManager
 
 ## OUTPUT:
 
-<img width="472" height="824" alt="image" src="https://github.com/user-attachments/assets/1ad7d8d2-922b-4187-96b5-0b5330764624" />
+<img width="619" height="342" alt="image" src="https://github.com/user-attachments/assets/4f787401-c9d0-4a8b-8c01-8008ba1233bd" />
 
 
 ## RESULT:
-Thus, the program that provides a DAO for managing contacts and retrieving all contacts whose names start with a specified letter is written and executed successfully.
+Thus, the program that implements a Factory returning a Windows, Linux, or Mac shell object based on user input is written and executed successfully.
 
